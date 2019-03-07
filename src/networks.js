@@ -26,12 +26,14 @@ module.exports = {
   },
   litecoin: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
+    bech32: 'ltc',
     bip32: {
       public: 0x019da462,
       private: 0x019d9cfe
     },
     pubKeyHash: 0x30,
     scriptHash: 0x32,
+    scriptHash2: 0x05, // old '3' prefix. available for backward compatibility.
     wif: 0xb0
   }
 }

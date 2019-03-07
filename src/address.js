@@ -70,6 +70,7 @@ function toOutputScript (address, network) {
   if (decode) {
     if (decode.version === network.pubKeyHash) return btemplates.pubKeyHash.output.encode(decode.hash)
     if (decode.version === network.scriptHash) return btemplates.scriptHash.output.encode(decode.hash)
+    if (decode.version === network.scriptHash2) return btemplates.scriptHash.output.encode(decode.hash)
   } else {
     try {
       decode = fromBech32(address)
