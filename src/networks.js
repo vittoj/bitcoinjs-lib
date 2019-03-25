@@ -35,5 +35,16 @@ module.exports = {
     scriptHash: 0x32,
     scriptHash2: 0x05, // old '3' prefix. available for backward compatibility.
     wif: 0xb0
+  },
+  dash: {
+    messagePrefix: '\x19Dash Signed Message:\n',
+    bip32: {
+      private: 0x0488ade4,
+      public: 0x0488b21e
+    },
+    bip44: 5,
+    pubKeyHash: 0x4c,
+    scripthash: 0x10,
+    wif: 0xcc
   }
 }
