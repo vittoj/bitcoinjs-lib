@@ -44,7 +44,18 @@ module.exports = {
     },
     bip44: 5,
     pubKeyHash: 0x4c,
-    scripthash: 0x10,
+    scriptHash: 0x10,
     wif: 0xcc
+  },
+  zcash: {
+    messagePrefix: '\x19Zcash Signed Message:\n',
+    bip32: {
+      private: 0x0488ade4,
+      public: 0x0488b21e
+    },
+    bip44: 133,
+    pubKeyHash: 0x1cb8,
+    scriptHash: 0x1cbd,
+    wif: 0x80
   }
 }
