@@ -4,7 +4,6 @@
 module.exports = {
   bitcoin: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
-    verLen: 1,
     bech32: 'bc',
     bip32: {
       public: 0x0488b21e,
@@ -16,7 +15,6 @@ module.exports = {
   },
   testnet: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
-    verLen: 1,
     bech32: 'tb',
     bip32: {
       public: 0x043587cf,
@@ -28,7 +26,6 @@ module.exports = {
   },
   litecoin: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
-    verLen: 1,
     bech32: 'ltc',
     bip32: {
       public: 0x019da462,
@@ -41,7 +38,6 @@ module.exports = {
   },
   dash: {
     messagePrefix: '\x19Dash Signed Message:\n',
-    verLen: 1,
     bip32: {
       private: 0x0488ade4,
       public: 0x0488b21e
