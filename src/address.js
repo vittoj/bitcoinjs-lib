@@ -10,7 +10,7 @@ var types = require('./types')
 function fromBase58Check (address, versionLen) {
   var payload = bs58check.decode(address)
 
-  var verLen = versionLen === 'undefined' ? 1 : versionLen;
+  var verLen = (typeof versionLen === 'undefined' ? 1 : versionLen)
   
   // TODO: 4.0.0, move to "toOutputScript"
   if (payload.length < 20 + verLen) throw new TypeError(address + ' is too short')
@@ -42,7 +42,7 @@ function fromBech32 (address) {
 function toBase58Check (hash, version, versionLen) {
   typeforce(types.tuple(types.Hash160bit, types.UInt8), arguments)
 
-  var verLen = versionLen === 'undefined' ? 1 : versionLen;
+  var verLen = (typeof versionLen === 'undefined' ? 1 : versionLen)
   var payload = Buffer.allocUnsafe(20 + verLen)
   if (verLen === 1) {
     payload.writeUInt8(version, 0)
@@ -78,7 +78,7 @@ function toOutputScript (address, network) {
 
   var decode
   try {
-    decode = fromBase58Check(address, network.verLen)
+    decode = fromBase58Check(address, network.hasOwnProperty('verLen') ? network.verLen : 1)
   } catch (e) {}
 
   if (decode) {
