@@ -47,6 +47,17 @@ module.exports = {
     scriptHash: 0x10,
     wif: 0xcc
   },
+  qtum: {
+    messagePrefix: '\x19Qtum Signed Message:\n',
+    bip32: {
+      public: 0x0488b21e,
+      private: 0x0488ade4
+    },
+    bip44: 2301,
+    pubKeyHash: 0x3A,
+    scriptHash: 0x32,
+    wif: 0x80
+  },
   zcash: {
     messagePrefix: '\x19Zcash Signed Message:\n',
     verLen: 2,
